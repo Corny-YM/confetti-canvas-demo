@@ -1,6 +1,6 @@
 ## Demo
 
-[catdad.github.io/canvas-confetti](https://cornfetti-demo.netlify.app/)
+[cornfetti-demo.netlify.app](https://cornfetti-demo.netlify.app/)
 
 ## Install
 
