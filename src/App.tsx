@@ -31,7 +31,10 @@ function App() {
     <div className="relative bg-slate-900/80 w-full h-full flex flex-col justify-center items-center">
       <div className="absolute right-2 top-2">
         <Button className="rounded-full" asChild>
-          <a href="#" target="_blank">
+          <a
+            href="https://github.com/Corny-YM/confetti-canvas-demo"
+            target="_blank"
+          >
             <Github />
           </a>
         </Button>
