@@ -4,11 +4,8 @@ import { Button } from "@/components/ui/button";
 import { randomInRange } from "@/utils";
 
 const Snow = () => {
-  const duration = 15 * 1000;
-  const animationEnd = Date.now() + duration;
-  let skew = 1;
-
-  const handleClick = () => {
+  const duration = 5 * 1000;
+  const frame = (animationEnd: number, skew: number) => {
     const timeLeft = animationEnd - Date.now();
     const ticks = Math.max(200, 500 * (timeLeft / duration));
     skew = Math.max(0.8, skew - 0.001);
@@ -31,8 +28,17 @@ const Snow = () => {
 
     if (timeLeft > 0) {
       // requestAnimationFrame => from Window Browser
-      requestAnimationFrame(handleClick);
+      requestAnimationFrame(() => {
+        frame(animationEnd, skew);
+      });
     }
+  };
+
+  const handleClick = () => {
+    let skew = 1;
+    const animationEnd = Date.now() + duration;
+    confetti.reset();
+    frame(animationEnd, skew);
   };
 
   return <Button onClick={handleClick}>Snow</Button>;

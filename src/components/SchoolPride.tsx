@@ -26,6 +26,7 @@ const SchoolPride = () => {
 
   const handleClick = () => {
     const end = Date.now() + 5 * 1000;
+    confetti.reset();
     frame(end);
   };
 
